@@ -121,7 +121,7 @@ export default function App() {
                 target="_blank"
                 rel="noreferrer"
                 style={{ "--c": color, "--glow": `${color}33` }}
-                className="block rounded-lg border border-neutral-800 p-4 transition duration-800 ease-out hover:bg-neutral-900 hover:border-(--c) hover:shadow-[0_0_60px_8px_var(--glow)] group-hover:opacity-60 hover:opacity-100!"
+                className="block rounded-lg border border-neutral-800 p-4 transition duration-700 ease-out hover:bg-neutral-900 hover:border-(--c) hover:shadow-[0_0_60px_8px_var(--glow)] group-hover:opacity-60 hover:opacity-100! hover:scale-105"
               >
                 <span className="font-medium text-white">{name} ↗</span>
                 <span className="block text-sm text-neutral-500">{desc}</span>
