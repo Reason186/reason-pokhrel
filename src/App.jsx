@@ -78,10 +78,11 @@ const links = [
 export default function App() {
   return (
     <main
-      className="min-h-screen bg-neutral-950 px-6 py-16 text-center text-neutral-300 sm:py-24"
+      className="flex h-dvh flex-col bg-neutral-950 pt-16 text-center text-neutral-300 sm:pt-24"
       style={{ fontFamily: "'Space Grotesk', sans-serif" }}
     >
-      <div className="mx-auto max-w-xl">
+      {/* fixed header */}
+      <header className="shrink-0 px-6 pb-6">
         <h1 className="text-3xl font-semibold text-white sm:text-4xl">
           Reason Pokhrel
         </h1>
@@ -113,7 +114,24 @@ export default function App() {
         </div>
 
         <p className="mt-8 text-neutral-500">Things I've built.</p>
-        <ul className="group mt-6 space-y-4">
+      </header>
+
+      {/* scrolling list */}
+      <div
+        className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden px-6 pb-16 pt-4
+          [&::-webkit-scrollbar]:w-1.5
+          [&::-webkit-scrollbar-track]:bg-transparent
+          [&::-webkit-scrollbar-thumb]:rounded-full
+          [&::-webkit-scrollbar-thumb]:bg-neutral-800
+          hover:[&::-webkit-scrollbar-thumb]:bg-neutral-600
+          supports-[-moz-appearance:none]:scrollbar-thin
+          supports-[-moz-appearance:none]:[scrollbar-color:#404040_transparent]"
+        style={{
+          maskImage:
+            "linear-gradient(to bottom, transparent, black 16px, black calc(100% - 28px), transparent)",
+        }}
+      >
+        <ul className="group mx-auto max-w-xl space-y-4">
           {links.map(({ name, url, desc, color }) => (
             <li key={url}>
               <a
